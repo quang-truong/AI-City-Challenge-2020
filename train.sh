@@ -1,0 +1,24 @@
+python train_xent_tri.py \
+-a glamor50_v1 \
+-s AIC20_ReID \
+-t AIC20_ReID \
+-j 16 \
+--lr-scheduler multi_step \
+--lr 0.0003 \
+--stepsize 20 40 60 \
+--gamma 0.3 \
+--label-smooth \
+--height 128 \
+--width 256 \
+--train-batch-size 32 \
+--train-sampler RandomIdentitySampler \
+--num-instances 4 \
+--random-erase \
+--color-jitter \
+--color-aug \
+--max-epoch 80 \
+--eval-freq 1 \
+--print-freq 200 \
+--load-weights log/weights/glamor50_v1-aic20-simu-vehicleID-v2-continued/model.pth.tar-25 \
+--save-dir log/glamor50_v1-aic20-eval-dmml \
+--gpu-devices 0

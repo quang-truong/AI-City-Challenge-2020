@@ -1,0 +1,7 @@
+*.pyc
+__pycache__/
+vehiclereid/__pycache__
+vehiclereid/datasets/__pycache__
+vehiclereid/datasets/AIC20_ReID/
+vehiclereid/datasets/AIC20_ReID_Simulation/
+/log

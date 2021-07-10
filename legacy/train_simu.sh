@@ -1,0 +1,27 @@
+python train_xent_tri.py \
+-a resnext101 \
+-s AIC20_ReID_Simu \
+-t AIC20_ReID_Simu \
+-j 16 \
+--lr-scheduler multi_step \
+--lr 0.0003 \
+--stepsize 10 20 30 \
+--gamma 0.3 \
+--label-smooth \
+--height 128 \
+--width 256 \
+--margin 0.3 \
+--lambda-xent 1 \
+--lambda-htri 10 \
+--lambda-center 0 \
+--train-batch-size 72 \
+--train-sampler RandomIdentitySampler \
+--num-instances 6 \
+--max-epoch 50 \
+--color-jitter \
+--color-aug \
+--random-erase \
+--save-dir log/resnext101-aic20-simu-vehicleID \
+--no-pretrained \
+--eval-freq 1 \
+--use-avai-gpus
